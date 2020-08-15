@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D profile='Interchange' version='3.0'  xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation =' http://www.web3d.org/specifications/x3d-3.0.xsd '>
+    <head>
+        <meta name='title' content='Figure17.04dTextureSphereTest.x3d'/>
+        <meta name='creator' content='Figure 17.4d, The VRML 2.0 Sourcebook, Copyright [1997] By Andrea L. Ames, David R. Nadeau, and John L. Moreland'/>
+    </head>
+    <!--
+    Index for Viewpoint image : Viewpoint_1
+    -->
+    <Scene>
+        <navigationInfo id='nav' headlight='true' type='turntable' typeParams="0 0 0.0 13.14"></navigationInfo>
+        <Transform rotation='0 1 0 0' translation='0 0 0'>
+            <Viewpoint description='Extruded room with a doorway' orientation='1 0 0 -1.57' position='0 130000 0'/>
+        </Transform>
+
+
+<!--        <Background
+            groundColor='0 0 0'
+            backUrl='"neg-z.png"'
+            bottomUrl='"neg-y.png"'
+            frontUrl='"pos-z.png"' 
+            leftUrl='"neg-x.png"'
+            rightUrl='"pos-x.png"'
+            topUrl='"pos-y.png"'/>-->
+        <Background
+            groundColor='0 0 0'
+            backUrl='"0003.png"'
+            bottomUrl='"0005.png"'
+            frontUrl='"0001.png"' 
+            leftUrl='"0002.png"'
+            rightUrl='"0004.png"'
+            topUrl='"0006.png"'/>        
+    </Scene>
+</X3D> 
+

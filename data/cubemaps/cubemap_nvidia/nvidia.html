@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"> 
+        <title>OSM2X3D</title>
+        <!--<script src="x3dom/x3dom-full.debug.js"></script>-->
+        <script src="http://www.x3dom.org/download/dev/x3dom-full.js"></script>
+        <!--<script src="http://www.x3dom.org/download/dev/x3dom-full.js"></script>-->
+        <script src="jquery-2.1.3.js"></script>
+        <script src="myJS.js"></script>
+        <!--<link rel="stylesheet" href="http://www.x3dom.org/download/dev/x3dom.css">-->
+        <link rel="stylesheet" href="http://www.x3dom.org/download/dev/x3dom.css">
+
+        <link rel='stylesheet' type='text/css' href='style.css'></link>
+    </head>
+    <body id="body">
+        <div id="container">
+            <X3D showlog="false" showstat="false">
+                <Scene id="scene">
+                    <!--<inline nameSpaceName="myX3d" url="result.x3d"></inline>-->
+                    <inline nameSpaceName="myX3d" url="nvidia.x3d"></inline>
+                </Scene>             
+            </X3D>
+        </div>                            
+    </body>
+</html>
