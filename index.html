@@ -54,7 +54,7 @@
               });
             });
 
-            object_list_loader("js/objectlist/RectangularPrism.js").then(
+          /*  object_list_loader("js/objectlist/RectangularPrism.js").then(
               (loader) => {
                 const object3d = new THREE.Object3D();
                 object3d.position.set(0, 0, 0);
@@ -72,6 +72,30 @@
                     object3d,
                     vars: {
                       Color: "0xFF0000",
+                    },
+                  },
+                });
+              }
+            );*/
+
+            object_list_loader("js/objectlist/PhotoRectAlfa.js").then(
+              (loader) => {
+                const object3d = new THREE.Object3D();
+                object3d.position.set(0, 1, 0.5);
+                scene.add(object3d);
+                loader({
+                  Helper,
+                  THREE,
+                  renderer,
+                  camera,
+                  scene,
+                  raycaster,
+                  normalize_size_function,
+                  page_object_params: {
+                    object3d,
+                    vars: {
+                      Color: "0xFF0000",
+                      url: "./data/1_pifu_front copy.png"
                     },
                   },
                 });
