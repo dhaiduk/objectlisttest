@@ -10,7 +10,9 @@ new THREE.TextureLoader().load(
         var material = new THREE.MeshBasicMaterial({
             map: texture,
             side: THREE.DoubleSide,
-            transparent: true
+            opacity: 1,
+            transparent: true,
+            alphaTest: 0.5,
         });
 
         var plane = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), material);

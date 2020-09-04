@@ -1,37 +1,86 @@
 <html>
-  <head>
-    <meta
-      http-equiv="Content-Type"
-      content="text/html"
-      charset="windows-1251"
-    />
-    <title>
-      Add personal AR page
-    </title>
-  </head>
-  <body>
-    <div class="MainWnd">
-      <table width="100%" border="0" cellpadding="1" cellspacing="1">
-        <td width="50%" class="ForumCell" style="text-align: left;">
-          <p class="PageTitle">Left</p>
-        </td>
-        <td
-          width="50%"
-          class="ForumCell"
-          style="text-align: left; vertical-align: top;"
-          id="editor_td_id"
-        >
-          <p class="PageTitle">right</p>
-          <script src="js/three.js-master/build/three.js"></script>
-          <script src="js/stats.js"></script>
-          <script src="js/three.js-master/examples/js/controls/OrbitControls.js"></script>
-          <script src="js/three.js-master/examples/js/loaders/GLTFLoader.js"></script>
-          <script src="js/HelperInline.js"></script>
-          <script src="js/init_scene.js"></script>
-          <script>
-            object_list_loader("js/objectlist/kinect_v1.js").then((loader) => {
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="windows-1251" />
+  <title>
+    Add personal AR page
+  </title>
+</head>
+
+<body>
+  <IMG SRC="./data/KOXOBiN.gif " id="gif1" width="1" height="1">
+
+  <div class="MainWnd">
+
+    <table width="100%" border="0" cellpadding="1" cellspacing="1">
+      <td width="50%" class="ForumCell" style="text-align: left;">
+        <p class="PageTitle">Left</p>
+      </td>
+      <td width="50%" class="ForumCell" style="text-align: left; vertical-align: top;" id="editor_td_id">
+
+        <p class="PageTitle">right</p>
+        <script src="js/three.js-master/build/three.js"></script>
+        <script src="js/stats.js"></script>
+        <script src="js/three.js-master/examples/js/controls/OrbitControls.js"></script>
+        <script src="js/three.js-master/examples/js/loaders/GLTFLoader.js"></script>
+        <script src="js/HelperInline.js"></script>
+        <script src="js/init_scene.js"></script>
+        <script src="js/libgif.js"></script>
+        <script>
+          object_list_loader("js/objectlist/kinect_v1.js").then((loader) => {
+            const object3d = new THREE.Object3D();
+            object3d.position.set(0, 0, 0);
+            scene.add(object3d);
+
+            loader({
+              Helper,
+              THREE,
+              renderer,
+              camera,
+              scene,
+              raycaster,
+              page_object_params: {
+                object3d,
+                vars: {
+                  autoplay: 1,
+                  muted: 1,
+                  loop: 1,
+                  video_url: "https://365508.selcdn.ru/examples/output.mp4",
+                  mask_url: "https://365508.selcdn.ru/examples/mask.png",
+                },
+              },
+            });
+          });
+
+
+          object_list_loader("js/objectlist/PhotoRectAlfa.js").then(
+            (loader) => {
               const object3d = new THREE.Object3D();
-              object3d.position.set(0, 0, 0);
+              object3d.position.set(0, 1, 0.3);
+              scene.add(object3d);
+              loader({
+                Helper,
+                THREE,
+                renderer,
+                camera,
+                scene,
+                raycaster,
+                normalize_size_function,
+                page_object_params: {
+                  object3d,
+                  vars: {
+                    Color: "0xFF0000",
+                    url: "data/1_pifu_front copy.png"
+                  },
+                },
+              });
+            }
+          );
+
+          object_list_loader("js/objectlist/PhotoRectAnimated.js").then(
+            (loader) => {
+              const object3d = new THREE.Object3D();
+              object3d.position.set(0, 1, 0.6);
               scene.add(object3d);
 
               loader({
@@ -41,71 +90,25 @@
                 camera,
                 scene,
                 raycaster,
+                normalize_size_function,
                 page_object_params: {
                   object3d,
                   vars: {
-                    autoplay: 1,
-                    muted: 1,
-                    loop: 1,
-                    video_url: "https://365508.selcdn.ru/examples/output.mp4",
-                    mask_url: "https://365508.selcdn.ru/examples/mask.png",
+                    Color: "0xFF0000",
+                    url: "data/bathroom-wall.gif"
                   },
                 },
               });
-            });
 
-          /*  object_list_loader("js/objectlist/RectangularPrism.js").then(
-              (loader) => {
-                const object3d = new THREE.Object3D();
-                object3d.position.set(0, 0, 0);
-                scene.add(object3d);
 
-                loader({
-                  Helper,
-                  THREE,
-                  renderer,
-                  camera,
-                  scene,
-                  raycaster,
-                  normalize_size_function,
-                  page_object_params: {
-                    object3d,
-                    vars: {
-                      Color: "0xFF0000",
-                    },
-                  },
-                });
-              }
-            );*/
+            }
+          );
 
-            object_list_loader("js/objectlist/PhotoRectAlfa.js").then(
-              (loader) => {
-                const object3d = new THREE.Object3D();
-                object3d.position.set(0, 1, 0.5);
-                scene.add(object3d);
-                loader({
-                  Helper,
-                  THREE,
-                  renderer,
-                  camera,
-                  scene,
-                  raycaster,
-                  normalize_size_function,
-                  page_object_params: {
-                    object3d,
-                    vars: {
-                      Color: "0xFF0000",
-                      url: "./data/1_pifu_front copy.png"
-                    },
-                  },
-                });
-              }
-            );
+          animate();
+        </script>
+      </td>
+    </table>
+  </div>
+</body>
 
-            animate();
-          </script>
-        </td>
-      </table>
-    </div>
-  </body>
 </html>
